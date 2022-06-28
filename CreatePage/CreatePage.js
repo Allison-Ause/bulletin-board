@@ -11,8 +11,8 @@ async function handlePageLoad() {
     display();
 }
 
-async function handleAddPost(title, description, contact, created_at) {
-    await addPost(title, description, contact, created_at);
+async function handleAddPost(title, description, contact) {
+    await addPost(title, description, contact);
     location.assign('/');
 }
 

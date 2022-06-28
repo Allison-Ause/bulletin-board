@@ -14,6 +14,7 @@ export default function createPostList(root) {
 
 function Post({ post }) {
     const div = document.createElement('div');
+    div.classList.add('post');
 
     const title = document.createElement('span');
     title.textContent = post.title;
@@ -24,12 +25,12 @@ function Post({ post }) {
     const contact = document.createElement('span');
     contact.textContent = post.contact;
 
+    const niceDate = (new Date(post.created_at)).toLocaleString();
+
     const created_at = document.createElement('span');
-    created_at.textContent = post.created_at; 
+    created_at.textContent = niceDate; 
 
     div.append(title, description, contact, created_at);
 
     return div;
 }
-
-// david shared this text: (new Date(bulletin.createdAt)).toLocaleString()

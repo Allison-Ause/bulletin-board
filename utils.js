@@ -1,4 +1,5 @@
-import { getUser } from '../services/post-services.js';
+import { getUser } from './services/post-services.js';
+
 
 export async function protectPage() {
     const user = await getUser();
