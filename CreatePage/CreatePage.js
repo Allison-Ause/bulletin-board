@@ -4,10 +4,9 @@ import { protectPage } from '../utils.js';
 import createAddPostForm from '../components/AddPostForm.js';
 
 
-let user = null;
 
 async function handlePageLoad() {
-    user = await protectPage();
+    await protectPage();
     display();
 }
 
@@ -22,5 +21,4 @@ function display() {
     AddPostForm();
 }
 
-// call display on pageload
 handlePageLoad();

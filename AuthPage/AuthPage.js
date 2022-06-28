@@ -4,7 +4,6 @@ import createAuthForm from '../components/AuthForm.js';
 
 async function handleSignIn(email, password) {
     const response = await signIn(email, password);
-    console.log(response);
     checkAuth(response);
 }
 
@@ -16,7 +15,6 @@ async function handleSignUp(email, password) {
 async function checkAuth(response) {
 
     if (response.error) {
-        console.log(response.error);
         return;
     }
     else {
@@ -36,3 +34,5 @@ function display() {
     SignInForm();
     SignUpForm();
 }
+
+display();

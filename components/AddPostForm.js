@@ -5,7 +5,7 @@ export default function createAddPostForm(form, { handleAddPost }) {
         e.preventDefault();
 
         const formData = new FormData(form);
-        console.log(form);
+
         handleAddPost(
             formData.get('title'),
             formData.get('description'),
