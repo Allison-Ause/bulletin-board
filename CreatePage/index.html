@@ -13,28 +13,37 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/home.css" />
+    <link rel="stylesheet" href="../styles/CreatePage.css"/>
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <title>Web MVC UI</title>
+    <title>Create Post</title>
 </head>
 
 <body>
     <header>
-        <img src="/assets/html_css_js.png">
-        <h1>Bulletin Board</h1>
+        <h1>Post Your Note!</h1>
     </header>
 
     <main>
-        <div id="header-bar">
-            <h1>Community Notice Board</h1>
-            <button id="auth-button">Login</button>
-            <button id="create-button">Create</button>
-        </div>
-        <ul id="post-list"></ul>
+        <form id="create-form">
+            <label>
+                Subject:
+                <input required name="title">
+            </label>
+            <label>
+                Description:
+                <input required name="description">
+            </label>
+            <label>
+                Contact:
+                <input required name="contact">
+            </label>
+            <button>Add to Board</button>
+        </form>
     </main>
 
     <footer>&copy;2022 Aspiring Software Developer</footer>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="CreatePage.js"></script>
 </body>
 
 </html>
