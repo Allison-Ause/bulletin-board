@@ -1,14 +1,18 @@
 import { addPost } from '../services/post-services.js';
+import { protectPage } from '../utils.js';
+
 import createAddPostForm from '../components/AddPostForm.js';
 
 
+let user = null;
+
 async function handlePageLoad() {
-    // user = await protectPage(); ADD IN AUTH PROTECTION LATER
+    user = await protectPage();
     display();
 }
 
-async function handleAddPost(title, description, contact) {
-    await addPost(title, description, contact);
+async function handleAddPost(title, description, contact, created_at) {
+    await addPost(title, description, contact, created_at);
     location.assign('/');
 }
 

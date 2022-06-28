@@ -24,7 +24,12 @@ function Post({ post }) {
     const contact = document.createElement('span');
     contact.textContent = post.contact;
 
-    div.append(title, description, contact);
+    const created_at = document.createElement('span');
+    created_at.textContent = post.created_at; 
+
+    div.append(title, description, contact, created_at);
 
     return div;
 }
+
+// david shared this text: (new Date(bulletin.createdAt)).toLocaleString()
