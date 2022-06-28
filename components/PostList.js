@@ -16,7 +16,7 @@ function Post({ post }) {
     const div = document.createElement('div');
     div.classList.add('post');
 
-    const title = document.createElement('span');
+    const title = document.createElement('h3');
     title.textContent = post.title;
 
     const description = document.createElement('span');
@@ -27,7 +27,7 @@ function Post({ post }) {
 
     const niceDate = (new Date(post.created_at)).toLocaleString();
 
-    const created_at = document.createElement('span');
+    const created_at = document.createElement('p');
     created_at.textContent = niceDate; 
 
     div.append(title, description, contact, created_at);
