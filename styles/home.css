@@ -40,6 +40,7 @@ h1 {
 .post p {
     font-size: 10px;
 }
+
 a {
     margin: 15px;
     padding-right: 20px;
@@ -52,4 +53,29 @@ a {
     color: white;
     font-size: 15px;
     font-weight: 900;
+}
+
+#paging {
+    text-align: center;
+    margin: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(234, 163, 234);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+button {
+    background-color: rgba(120, 99, 159, 0.867);
+    color: white;
+    border: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5%;
+    font-style: bold;
 }
