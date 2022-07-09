@@ -13,38 +13,39 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/home.css" />
+    <link rel="stylesheet" href="../styles/CreatePage.css"/>
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <title>Web MVC UI</title>
+    <title>Create Post</title>
 </head>
 
 <body>
+    <header>
+        <h1>Post Your Note!</h1>
+    </header>
 
     <main>
-        <div id="header-bar">
-            <h1>Community Notice Board</h1>
-            <a href="./AuthPage" id="auth-button">Login</a>
-            <a href="./CreatePage" id="create-button">Create</a>
+        <div id="create-container">
+            <form id="create-form">
+                <label>
+                    Subject:
+                    <input required name="title">
+                </label>
+                <label>
+                    Description:
+                    <textarea required name="description"></textarea>
+                </label>
+                <label>
+                    Contact:
+                    <input required name="contact">
+                </label>
+                <button>Add to Board</button>
+            </form>
         </div>
-        <section id="paging">
-            <label>Per Page:
-                <select>
-                    <option value="6">6</option>
-                    <option value="12">12</option>
-                    <option value="18">18</option>
-                </select>
-            </label>
-            <span class="page-info"></span>
-            <button>&lt; Prev</button>
-            <button>Next &gt;</button>
-        </section>
-        
-        <section>
-            <ul id="post-list"></ul>
-        </section>
     </main>
 
+    <footer>&copy;2022 Aspiring Software Developer</footer>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="CreatePage.js"></script>
 </body>
 
 </html>

@@ -1,19 +1,54 @@
-// import services and utilities
 
-// import component creators
+import { getPosts } from './services/post-services.js';
 
-// declare state variables
+import createPostList from './components/PostList.js';
+import createPaging from './components/Paging.js';
 
-// write handler functions
+let postList = [];
+let page = 1;
+let pageSize = 6;
+let totalPages = 0;
 
-// Create each component: 
-// - pass in the root element via querySelector
-// - pass any needed handler functions as properties of an actions object 
+async function handlePageLoad() {
+    const params = new URLSearchParams(window.location.search);
 
-// Roll-up display function that renders (calls with state) each component
+    page = Number(params.get('page')) || 1;
+    pageSize = Number(params.get('pageSize')) || 6;
+
+    const start = (page - 1) * pageSize;
+    const end = (page * pageSize) - 1;
+
+    const { data, count } = await getPosts({ start, end });
+    postList = data;
+
+    totalPages = Math.ceil(count / pageSize);
+
+    display();
+}
+
+function handlePaging(change, size) {
+
+    if (Number(size) === pageSize) {
+        page = Math.max(1, page + change);
+
+    } else {
+        page = 1;
+    }
+    const params = new URLSearchParams(window.location.search);
+
+    params.set('page', page);
+    params.set('pageSize', size);
+
+    window.location.search = params.toString();
+}
+
+const PostList = createPostList(document.querySelector('#post-list'));
+const Paging = createPaging(document.querySelector('#paging'), { handlePaging });
+
 function display() {
-    // Call each component passing in props that are the pieces of state this component needs
+    Paging({ page, pageSize, totalPages });
+    PostList({ postList });
 }
 
 // Call display on page load
-display();
+handlePageLoad();
