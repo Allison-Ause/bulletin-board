@@ -21,8 +21,7 @@ export async function signUp(email, password) {
 export async function getPosts({ start, end }) {
     const response = await client.from('posts').select('*', { count: 'exact' }).order('created_at', { ascending: false }).range(start, end);
 
-
-    return response.data;
+    return response;
 }
 
 export async function addPost(title, description, contact) {

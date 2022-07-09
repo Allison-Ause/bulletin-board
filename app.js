@@ -7,7 +7,7 @@ import createPaging from './components/Paging.js';
 let postList = [];
 let page = 1;
 let pageSize = 6;
-let totalPages = '';
+let totalPages = 0;
 
 async function handlePageLoad() {
     const params = new URLSearchParams(window.location.search);
@@ -30,11 +30,11 @@ function handlePaging(change, size) {
 
     if (Number(size) === pageSize) {
         page = Math.max(1, page + change);
+
     } else {
         page = 1;
     }
     const params = new URLSearchParams(window.location.search);
-    page = Math.max(1, page + change);
 
     params.set('page', page);
     params.set('pageSize', size);

@@ -1,7 +1,7 @@
 
 
 export default function createPostList(root) {
-    
+
     return ({ postList }) => {
         root.innerHTML = '';
         
